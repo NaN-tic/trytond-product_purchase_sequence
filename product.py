@@ -12,11 +12,21 @@ class Product:
     __name__ = 'product.product'
 
     @classmethod
+    def __setup__(cls):
+        super(Product, cls).__setup__()
+        cls._error_messages.update({
+                'purchasable_sequence': 'Configure purchasable sequence'
+                    ' in Product Configuration',
+                })
+
+    @classmethod
     def get_purchase_sequence(cls):
         Sequence = Pool().get('ir.sequence')
         Configuration = Pool().get('product.configuration')
 
         config = Configuration(1)
+        if not config.purchasable_sequence:
+            cls.raise_user_error('purchasable_sequence')
         code = Sequence.get_id(config.purchasable_sequence.id)
         return code
 
