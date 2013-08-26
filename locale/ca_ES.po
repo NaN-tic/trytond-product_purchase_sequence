@@ -2,6 +2,12 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
+msgctxt "error:product.product:"
+msgid "Configure purchasable sequence in Product Configuration"
+msgstr ""
+"Configura la seqüència de productes de compra en la configuració de "
+"productes."
+
 msgctxt "field:product.configuration,purchasable_sequence:"
 msgid "Purchasable Sequence"
 msgstr "Sequència productes de compra"
