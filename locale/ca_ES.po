@@ -12,6 +12,10 @@ msgctxt "field:product.configuration,purchasable_sequence:"
 msgid "Purchasable Sequence"
 msgstr "Sequència productes de compra"
 
+msgctxt "field:product.configuration.company,purchasable_sequence:"
+msgid "Purchasable sequence"
+msgstr "Sequència productes de compra"
+
 msgctxt "model:ir.sequence,name:sequence_product_purchasable"
 msgid "Product Purchasable"
 msgstr "Producte de compra"
