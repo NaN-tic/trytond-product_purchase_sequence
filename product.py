@@ -44,12 +44,15 @@ class Product:
         return super(Product, cls).create(vlist)
 
     @classmethod
-    def write(cls, products, vals):
-        super(Product, cls).write(products, vals)
-        for product in products:
-            if product.template.purchasable and not product.template.salable \
-                and not product.code:
-                    if not vals.get('code'):
+    def write(cls, *args):
+        super(Product, cls).write(*args)
+        actions = iter(args)
+        for products, values in zip(actions, actions):
+            for product in products:
+                if (product.template.purchasable
+                        and not product.template.salable
+                        and not product.code):
+                    if not values.get('code'):
                         cls.write([product], {
                             'code': cls.get_purchase_sequence()
                             })
